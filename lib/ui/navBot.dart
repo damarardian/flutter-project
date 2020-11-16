@@ -8,6 +8,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   int pages = 1;
+  String name;
 
   final Add  add = Add();
   final History history = History();
@@ -20,12 +21,15 @@ class _HomePageState extends State<HomePage> {
   Widget choosePages(int page){
     switch(page){
       case 0:
+        name = "tambah";
         return add;
         break;
       case 1:
+        name = "rumah";
         return home;
         break;
       case 2:
+        name = "riwayat";
         return history;
         break;
     }
@@ -33,7 +37,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(
+          backgroundColor: Color(0xff6c5ce7),
+          title: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(
+                name,
+                style: TextStyle(color: Colors.white),
+              ),
+            )
+          ),
+          elevation: 0,
+      ),
       body: ListView(
         children: <Widget>[showPages],
       ),
