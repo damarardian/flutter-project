@@ -3,5 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 
-part 'homePage.dart';
+part 'navBot.dart';
 part 'add.dart';
+part 'history.dart';
+part 'home.dart';

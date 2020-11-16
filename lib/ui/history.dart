@@ -1,10 +1,10 @@
 part of 'uis.dart';
 
-class Add extends StatelessWidget {
+class History extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Ini halman tambah"),
+      child: Text("ini halaman history"),
     );
   }
 }
