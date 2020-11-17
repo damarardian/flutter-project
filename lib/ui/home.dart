@@ -25,10 +25,16 @@ class _HomeState extends State<Home> {
                           color: Colors.black.withOpacity(0.7),
                           blurRadius: 20,
                           spreadRadius: 2,
-                          offset: Offset(0.000, 30.0)
+
                         )
                       ],
-                      color: Colors.indigo[500],
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        colors: [
+                          Color(0xffee0000),
+                          Color(0xffeeee00)
+                        ], // r
+                      ),
                       borderRadius: BorderRadius.only(
                         bottomRight: Radius.circular(30),
                         bottomLeft: Radius.circular(30),
@@ -161,14 +167,14 @@ class _HomeState extends State<Home> {
                           children: <Widget>[
                             Container(
                               height: 100,
-                              width: 115,
+                              width: 100,
                               decoration: BoxDecoration(
-                                  color: Colors.indigo[500],
-                                  borderRadius: BorderRadius.circular(5),
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(50.2),
                                   boxShadow: [
                                     BoxShadow(
-                                        color: Colors.black.withOpacity(0.3),
-                                        spreadRadius:6,
+                                        color: Colors.black.withOpacity(0.2),
+                                        spreadRadius:4,
                                         blurRadius: 4
                                     )
                                   ]
@@ -177,8 +183,8 @@ class _HomeState extends State<Home> {
                                 padding: EdgeInsets.all(8.0),
                                 child: Column(
                                   children: <Widget>[
-                                    Icon(Icons.language,color: Colors.white,),
-                                    Text('Total setoran', style: TextStyle(color: Colors.white),)
+                                    Icon(Icons.language,color: Colors.indigo[500],),
+                                    Text('Total setoran', style: TextStyle(color: Colors.indigo[500]),)
                                   ],
                                 ),
                               ),

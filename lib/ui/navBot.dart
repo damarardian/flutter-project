@@ -21,15 +21,15 @@ class _HomePageState extends State<HomePage> {
   Widget choosePages(int page){
     switch(page){
       case 0:
-        name = "tambah";
+        name = "Add";
         return add;
         break;
       case 1:
-        name = "rumah";
+        name = "Home";
         return home;
         break;
       case 2:
-        name = "riwayat";
+        name = "Recent";
         return history;
         break;
     }
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
             child: Align(
               alignment: Alignment.center,
               child: Text(
-                name,
+                name??'something went wrong',
                 style: TextStyle(color: Colors.white),
               ),
             )
