@@ -10,7 +10,7 @@ class _HomePageState extends State<HomePage> {
   int pages = 1;
   String name;
 
-  final Add  add = Add();
+  final List_siswa  list_siswa = List_siswa();
   final History history = History();
   final Home home = Home();
 
@@ -21,8 +21,8 @@ class _HomePageState extends State<HomePage> {
   Widget choosePages(int page){
     switch(page){
       case 0:
-        name = "Add";
-        return add;
+        name = "Siswa";
+        return list_siswa;
         break;
       case 1:
         name = "Home";
@@ -57,9 +57,9 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       bottomNavigationBar: CurvedNavigationBar(
         items: <Widget>[
-          Icon(Icons.add,color: Colors.white),
-          Icon(Icons.home,color: Colors.white),
-          Icon(Icons.history,color: Colors.white),
+          Icon(Icons.people,color: Colors.white),
+          Icon(Icons.person,color: Colors.white),
+          Icon(Icons.calendar_today,color: Colors.white),
         ],
         color: Colors.blueAccent,
         height: 50,
