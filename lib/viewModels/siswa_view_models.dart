@@ -22,24 +22,25 @@ Future getSiswa() async {
   }
 }
 
-Future getSetor() async {
-  try { //
+Future getOneSiswa(String id) async {
+  try {
     http.Response hasil = await http.get(
-        Uri.encodeFull("https://flutter-project.herokuapp.com/api/siswa"),
-        headers: {"Accept": "application/json"}
-    );
+        Uri.encodeFull("https://flutter-project.herokuapp.com/api/siswa/${id}"),
+        headers: {"Accept": "application/json"});
 
     if (hasil.statusCode == 200) {
-      print("Sukses menampilkan data hafalan");
-      final data = postModelFromJson(hasil.body);
-      final data2 = Hafalan.fromJson(hasil.body);
+      print("Sukses menampilkan data setoran");
+      final data = json.decode(hasil.body);
+      print(data);
       return data;
+//      return Hafalan.fromJson(data[0]);
+
     } else {
-      print("Gagal");
+      print("Gagal menampikan 1 data");
       return null;
     }
-  }
-  catch (e) {
-    print ("Error pada catch $e");
+  } catch (e) {
+    print("Error pada catch $e");
   }
 }
+

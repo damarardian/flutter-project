@@ -24,7 +24,7 @@ class _List_siswaState extends State<List_siswa> {
   @override
   Widget build(BuildContext context) {
     return SizedBox (
-      height: 520,
+      height: 525,
       child: Column(
         children: <Widget>[
           dataSiswa == null ?  Center(
@@ -33,13 +33,19 @@ class _List_siswaState extends State<List_siswa> {
             )
           ): Expanded (
             child: ListView.builder(
-              shrinkWrap: true,
+//              shrinkWrap: true,
               itemCount: dataSiswa.length,
               itemBuilder: (context, i) {
                 return ListTile(
                   subtitle: GestureDetector(
-                    onTap: (){
-                      print("container di klik");
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder:(context){
+                          return Setor(
+                            id: dataSiswa[i].id.toString(),
+                          );
+                        }
+                      ));
                     },
                     child: Container(
                       height: 150.0,
@@ -62,7 +68,7 @@ class _List_siswaState extends State<List_siswa> {
                             children: <Widget>[
                               Text(dataSiswa[i].name, style: new TextStyle(fontSize: 20.0, color: Colors.white70, fontWeight: FontWeight.bold),),
                               SizedBox(height: 8.0,),
-                              Text('Siswa', style: new TextStyle(fontSize: 12.0, color: Colors.white70),),
+                              Text(dataSiswa[i].email, style: new TextStyle(fontSize: 12.0, color: Colors.white70),),
                               SizedBox(height: 10.0,),
                               Row(children: <Widget>[
                                 Column(children: <Widget>[

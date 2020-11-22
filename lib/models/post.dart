@@ -41,7 +41,8 @@ class PostModel {
     updatedAt: DateTime.parse(json["updated_at"]),
     hafalan: List<Hafalan>.from(json["hafalan"].map((x) => Hafalan.fromJson(x))),
   );
-
+  //List<PostModel> postModelFromJson(String str) => List<PostModel>.from(json.decode(str).map((x) => PostModel.fromJson(x)));
+  //String postModelToJson(List<PostModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
   Map<String, dynamic> toJson() => {
     "id": id,
     "name": name,
